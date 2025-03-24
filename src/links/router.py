@@ -6,7 +6,7 @@ from typing import Optional
 from . import schemas
 from ..models import User, Link
 from src.auth.users import current_optional_user, current_active_user
-from .utils import generate_short_code, invalidate_cache, normalize_url
+from .utils import generate_short_code, invalidate_cache
 from fastapi_cache.decorator import cache
 from datetime import datetime, timezone
 from fastapi.responses import RedirectResponse
