@@ -57,3 +57,21 @@ celery.conf.beat_schedule = {
         "schedule": crontab(minute="*/10"),
     },
 }
+
+
+@celery.task
+def grant_superuser(user_id: str):
+    from src.models import User
+    with SessionLocal() as session:
+        session.execute(
+            update(User).where(User.id == user_id).values(is_superuser=True)
+        )
+        session.commit()
+
+
+def trigger_cleanup_task():
+    cleanup_old_links.apply_async()
+
+
+def trigger_grant_admin_task(user_id: str):
+    grant_superuser.apply_async(args=[user_id])

@@ -19,7 +19,6 @@ router = APIRouter(
 
 
 @router.get("/{short_code}", response_class=RedirectResponse)
-@cache(expire=60)
 async def redirect_to_original(
     short_code: str,
     session: AsyncSession = Depends(get_async_session)
