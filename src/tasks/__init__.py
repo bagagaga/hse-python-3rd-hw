@@ -1,0 +1,1 @@
+N_DAYS_UNUSED = 7
