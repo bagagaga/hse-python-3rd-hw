@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import delete, update, select
+from sqlalchemy import delete, select
 from uuid import UUID
 
 from src.auth.users import current_active_user

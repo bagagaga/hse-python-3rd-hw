@@ -11,3 +11,5 @@ DB_NAME = os.getenv("DB_NAME")
 
 DB_ADMIN_PASS = os.getenv("DB_ADMIN_PASS")
 DB_ADMIN_EMAIL = os.getenv("DB_ADMIN_EMAIL")
+
+IS_TEST = os.getenv("TESTING", "0") == "1"
