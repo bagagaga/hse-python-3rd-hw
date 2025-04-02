@@ -1,248 +1,335 @@
 Running moderate load test...
-Starting load test with 10 users, spawn rate of 1/s, for 10s
-Command: locust -f locustfile.py --headless --users 10 --spawn-rate 1 --run-time 10s --host http://localhost:9999 --csv load_test_results/stats_20250402_235142
+Starting load test with 50 users, spawn rate of 5/s, for 30s
+Command: locust -f locustfile.py --headless --users 50 --spawn-rate 5 --run-time 30s --host http://localhost:9999 --csv load_test_results/stats_20250403_004121
 
 Running high load test...
-Starting load test with 10 users, spawn rate of 1/s, for 10s
-Command: locust -f locustfile.py --headless --users 10 --spawn-rate 1 --run-time 10s --host http://localhost:9999 --csv load_test_results/stats_20250402_235158
+Starting load test with 100 users, spawn rate of 10/s, for 30s
+Command: locust -f locustfile.py --headless --users 100 --spawn-rate 10 --run-time 30s --host http://localhost:9999 --csv load_test_results/stats_20250403_004157
 
-Generating report for load_test_results/stats_20250402_235142_stats.csv...
+Generating report for load_test_results/stats_20250403_004121_stats.csv...
 
 === Load Test Results ===
-Total Requests: 70
-Total Failures: 2
-Failure Rate: 2.86%
+Total Requests: 1484
+Total Failures: 84
+Failure Rate: 5.66%
 
 === Response Time Statistics (ms) ===
 
 Endpoint: /auth/jwt/login
-  Request Count: 4
+  Request Count: 25
   Failure Count: 0
-  Min: 29.07 ms
-  Avg: 40.20 ms
-  Max: 54.54 ms
-  P90: 55.00 ms
-  P95: 55.00 ms
-  P99: 55.00 ms
-  Requests/s: 0.45
+  Min: 32.37 ms
+  Avg: 49.95 ms
+  Max: 92.06 ms
+  P90: 69.00 ms
+  P95: 92.00 ms
+  P99: 92.00 ms
+  Requests/s: 0.86
 
 Endpoint: /auth/register
-  Request Count: 4
+  Request Count: 25
   Failure Count: 0
-  Min: 43.08 ms
-  Avg: 68.10 ms
-  Max: 121.59 ms
-  P90: 120.00 ms
-  P95: 120.00 ms
-  P99: 120.00 ms
-  Requests/s: 0.45
+  Min: 51.49 ms
+  Avg: 93.97 ms
+  Max: 170.01 ms
+  P90: 150.00 ms
+  P95: 170.00 ms
+  P99: 170.00 ms
+  Requests/s: 0.86
 
 Endpoint: /links/[short_code]
-  Request Count: 3
+  Request Count: 104
   Failure Count: 0
-  Min: 3.16 ms
-  Avg: 7.20 ms
-  Max: 12.65 ms
-  P90: 13.00 ms
-  P95: 13.00 ms
-  P99: 13.00 ms
-  Requests/s: 0.34
+  Min: 2.64 ms
+  Avg: 8.48 ms
+  Max: 28.62 ms
+  P90: 14.00 ms
+  P95: 17.00 ms
+  P99: 23.00 ms
+  Requests/s: 3.58
 
 Endpoint: /links/[short_code] (anon)
-  Request Count: 9
+  Request Count: 237
   Failure Count: 0
-  Min: 6.60 ms
-  Avg: 16.46 ms
-  Max: 53.12 ms
-  P90: 53.00 ms
-  P95: 53.00 ms
-  P99: 53.00 ms
-  Requests/s: 1.02
+  Min: 2.39 ms
+  Avg: 13.16 ms
+  Max: 128.37 ms
+  P90: 18.00 ms
+  P95: 42.00 ms
+  P99: 90.00 ms
+  Requests/s: 8.17
+
+Endpoint: /links/[short_code] (update)
+  Request Count: 9
+  Failure Count: 9
+  Min: 5.14 ms
+  Avg: 8.56 ms
+  Max: 13.91 ms
+  P90: 14.00 ms
+  P95: 14.00 ms
+  P99: 14.00 ms
+  Requests/s: 0.31
 
 Endpoint: /links/[short_code]/stats
-  Request Count: 1
-  Failure Count: 1
-  Min: 11.13 ms
-  Avg: 11.13 ms
-  Max: 11.13 ms
-  P90: 11.00 ms
-  P95: 11.00 ms
-  P99: 11.00 ms
-  Requests/s: 0.11
+  Request Count: 34
+  Failure Count: 33
+  Min: 3.67 ms
+  Avg: 8.74 ms
+  Max: 22.58 ms
+  P90: 15.00 ms
+  P95: 17.00 ms
+  P99: 23.00 ms
+  Requests/s: 1.17
+
+Endpoint: /links/search/
+  Request Count: 11
+  Failure Count: 0
+  Min: 3.22 ms
+  Avg: 5.96 ms
+  Max: 9.50 ms
+  P90: 9.00 ms
+  P95: 10.00 ms
+  P99: 10.00 ms
+  Requests/s: 0.38
 
 Endpoint: /links/shorten
-  Request Count: 9
+  Request Count: 136
   Failure Count: 0
-  Min: 4.76 ms
-  Avg: 13.41 ms
-  Max: 42.34 ms
-  P90: 42.00 ms
-  P95: 42.00 ms
-  P99: 42.00 ms
-  Requests/s: 1.02
+  Min: 3.92 ms
+  Avg: 14.66 ms
+  Max: 146.80 ms
+  P90: 20.00 ms
+  P95: 33.00 ms
+  P99: 91.00 ms
+  Requests/s: 4.69
 
 Endpoint: /links/shorten (custom)
-  Request Count: 1
+  Request Count: 12
   Failure Count: 0
-  Min: 21.21 ms
-  Avg: 21.21 ms
-  Max: 21.21 ms
-  P90: 21.00 ms
-  P95: 21.00 ms
-  P99: 21.00 ms
-  Requests/s: 0.11
+  Min: 3.97 ms
+  Avg: 11.75 ms
+  Max: 22.56 ms
+  P90: 16.00 ms
+  P95: 23.00 ms
+  P99: 23.00 ms
+  Requests/s: 0.41
 
 Endpoint: Redirect Time
-  Request Count: 3
+  Request Count: 104
   Failure Count: 0
-  Min: 3.18 ms
-  Avg: 7.24 ms
-  Max: 12.71 ms
-  P90: 13.00 ms
-  P95: 13.00 ms
-  P99: 13.00 ms
-  Requests/s: 0.34
+  Min: 2.66 ms
+  Avg: 8.55 ms
+  Max: 28.64 ms
+  P90: 14.00 ms
+  P95: 18.00 ms
+  P99: 23.00 ms
+  Requests/s: 3.58
+
+Endpoint: Search Performance
+  Request Count: 11
+  Failure Count: 0
+  Min: 3.25 ms
+  Avg: 6.01 ms
+  Max: 9.56 ms
+  P90: 9.00 ms
+  P95: 10.00 ms
+  P99: 10.00 ms
+  Requests/s: 0.38
 
 Endpoint: Stats Cache Miss
-  Request Count: 1
+  Request Count: 34
   Failure Count: 0
-  Min: 11.36 ms
-  Avg: 11.36 ms
-  Max: 11.36 ms
-  P90: 11.00 ms
-  P95: 11.00 ms
-  P99: 11.00 ms
-  Requests/s: 0.11
+  Min: 3.72 ms
+  Avg: 8.87 ms
+  Max: 22.84 ms
+  P90: 16.00 ms
+  P95: 17.00 ms
+  P99: 23.00 ms
+  Requests/s: 1.17
 
 Endpoint: Aggregated
-  Request Count: 35
-  Failure Count: 1
-  Min: 3.16 ms
-  Avg: 22.54 ms
-  Max: 121.59 ms
-  P90: 53.00 ms
-  P95: 61.00 ms
-  P99: 120.00 ms
-  Requests/s: 3.98
+  Request Count: 742
+  Failure Count: 42
+  Min: 2.39 ms
+  Avg: 15.40 ms
+  Max: 170.01 ms
+  P90: 28.00 ms
+  P95: 64.00 ms
+  P99: 130.00 ms
+  Requests/s: 25.57
 
 === Failures ===
 Endpoint: /links/[short_code]/stats
   Method: GET
   Error: HTTPError('404 Client Error: Not Found for url: /links/[short_code]/stats')
-  Occurrences: 1
+  Occurrences: 33
+
+Endpoint: /links/[short_code] (update)
+  Method: PUT
+  Error: HTTPError('404 Client Error: Not Found for url: /links/[short_code] (update)')
+  Occurrences: 9
 
 
-Generating report for load_test_results/stats_20250402_235158_stats.csv...
+Generating report for load_test_results/stats_20250403_004157_stats.csv...
 
 === Load Test Results ===
-Total Requests: 92
-Total Failures: 2
-Failure Rate: 2.17%
+Total Requests: 2938
+Total Failures: 132
+Failure Rate: 4.49%
 
 === Response Time Statistics (ms) ===
 
 Endpoint: /auth/jwt/login
-  Request Count: 4
+  Request Count: 50
   Failure Count: 0
-  Min: 30.23 ms
-  Avg: 34.22 ms
-  Max: 36.51 ms
-  P90: 37.00 ms
-  P95: 37.00 ms
-  P99: 37.00 ms
-  Requests/s: 0.45
+  Min: 31.84 ms
+  Avg: 59.05 ms
+  Max: 91.93 ms
+  P90: 89.00 ms
+  P95: 90.00 ms
+  P99: 92.00 ms
+  Requests/s: 1.72
 
 Endpoint: /auth/register
-  Request Count: 4
+  Request Count: 50
   Failure Count: 0
-  Min: 42.44 ms
-  Avg: 52.92 ms
-  Max: 62.77 ms
-  P90: 63.00 ms
-  P95: 63.00 ms
-  P99: 63.00 ms
-  Requests/s: 0.45
+  Min: 63.80 ms
+  Avg: 126.90 ms
+  Max: 251.27 ms
+  P90: 210.00 ms
+  P95: 210.00 ms
+  P99: 250.00 ms
+  Requests/s: 1.72
 
 Endpoint: /links/[short_code]
-  Request Count: 9
+  Request Count: 220
   Failure Count: 0
-  Min: 4.27 ms
-  Avg: 10.81 ms
-  Max: 15.14 ms
-  P90: 15.00 ms
-  P95: 15.00 ms
-  P99: 15.00 ms
-  Requests/s: 1.00
+  Min: 2.41 ms
+  Avg: 9.19 ms
+  Max: 76.04 ms
+  P90: 13.00 ms
+  P95: 29.00 ms
+  P99: 56.00 ms
+  Requests/s: 7.57
 
 Endpoint: /links/[short_code] (anon)
-  Request Count: 9
+  Request Count: 452
   Failure Count: 0
-  Min: 5.83 ms
-  Avg: 19.28 ms
-  Max: 61.93 ms
-  P90: 62.00 ms
-  P95: 62.00 ms
-  P99: 62.00 ms
-  Requests/s: 1.00
+  Min: 2.34 ms
+  Avg: 14.50 ms
+  Max: 253.04 ms
+  P90: 18.00 ms
+  P95: 83.00 ms
+  P99: 140.00 ms
+  Requests/s: 15.55
+
+Endpoint: /links/[short_code] (update)
+  Request Count: 22
+  Failure Count: 22
+  Min: 3.02 ms
+  Avg: 6.89 ms
+  Max: 14.29 ms
+  P90: 10.00 ms
+  P95: 12.00 ms
+  P99: 14.00 ms
+  Requests/s: 0.76
 
 Endpoint: /links/[short_code]/stats
-  Request Count: 1
-  Failure Count: 1
-  Min: 16.08 ms
-  Avg: 16.08 ms
-  Max: 16.08 ms
-  P90: 16.00 ms
-  P95: 16.00 ms
-  P99: 16.00 ms
-  Requests/s: 0.11
+  Request Count: 44
+  Failure Count: 44
+  Min: 3.22 ms
+  Avg: 10.44 ms
+  Max: 81.59 ms
+  P90: 13.00 ms
+  P95: 36.00 ms
+  P99: 82.00 ms
+  Requests/s: 1.51
+
+Endpoint: /links/search/
+  Request Count: 19
+  Failure Count: 0
+  Min: 2.68 ms
+  Avg: 4.37 ms
+  Max: 9.72 ms
+  P90: 7.00 ms
+  P95: 10.00 ms
+  P99: 10.00 ms
+  Requests/s: 0.65
 
 Endpoint: /links/shorten
-  Request Count: 9
+  Request Count: 302
   Failure Count: 0
-  Min: 6.12 ms
-  Avg: 13.76 ms
-  Max: 20.41 ms
-  P90: 20.00 ms
-  P95: 20.00 ms
-  P99: 20.00 ms
-  Requests/s: 1.00
+  Min: 3.45 ms
+  Avg: 17.04 ms
+  Max: 210.07 ms
+  P90: 22.00 ms
+  P95: 84.00 ms
+  P99: 160.00 ms
+  Requests/s: 10.39
+
+Endpoint: /links/shorten (custom)
+  Request Count: 27
+  Failure Count: 0
+  Min: 5.23 ms
+  Avg: 11.68 ms
+  Max: 36.26 ms
+  P90: 22.00 ms
+  P95: 26.00 ms
+  P99: 36.00 ms
+  Requests/s: 0.93
 
 Endpoint: Redirect Time
-  Request Count: 9
+  Request Count: 220
   Failure Count: 0
-  Min: 4.33 ms
-  Avg: 10.93 ms
-  Max: 15.32 ms
-  P90: 15.00 ms
-  P95: 15.00 ms
-  P99: 15.00 ms
-  Requests/s: 1.00
+  Min: 2.44 ms
+  Avg: 9.25 ms
+  Max: 76.10 ms
+  P90: 13.00 ms
+  P95: 29.00 ms
+  P99: 56.00 ms
+  Requests/s: 7.57
+
+Endpoint: Search Performance
+  Request Count: 19
+  Failure Count: 0
+  Min: 2.70 ms
+  Avg: 4.41 ms
+  Max: 9.76 ms
+  P90: 7.00 ms
+  P95: 10.00 ms
+  P99: 10.00 ms
+  Requests/s: 0.65
 
 Endpoint: Stats Cache Miss
-  Request Count: 1
+  Request Count: 44
   Failure Count: 0
-  Min: 16.41 ms
-  Avg: 16.41 ms
-  Max: 16.41 ms
-  P90: 16.00 ms
-  P95: 16.00 ms
-  P99: 16.00 ms
-  Requests/s: 0.11
+  Min: 3.31 ms
+  Avg: 10.61 ms
+  Max: 81.70 ms
+  P90: 13.00 ms
+  P95: 36.00 ms
+  P99: 82.00 ms
+  Requests/s: 1.51
 
 Endpoint: Aggregated
-  Request Count: 46
-  Failure Count: 1
-  Min: 4.27 ms
-  Avg: 19.00 ms
-  Max: 62.77 ms
-  P90: 42.00 ms
-  P95: 61.00 ms
-  P99: 63.00 ms
-  Requests/s: 5.13
+  Request Count: 1469
+  Failure Count: 66
+  Min: 2.34 ms
+  Avg: 18.12 ms
+  Max: 253.04 ms
+  P90: 44.00 ms
+  P95: 92.00 ms
+  P99: 160.00 ms
+  Requests/s: 50.55
 
 === Failures ===
 Endpoint: /links/[short_code]/stats
   Method: GET
   Error: HTTPError('404 Client Error: Not Found for url: /links/[short_code]/stats')
-  Occurrences: 1
+  Occurrences: 44
+
+Endpoint: /links/[short_code] (update)
+  Method: PUT
+  Error: HTTPError('404 Client Error: Not Found for url: /links/[short_code] (update)')
+  Occurrences: 22
 

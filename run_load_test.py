@@ -105,13 +105,13 @@ def main():
     results = []
 
     print("Running moderate load test...")
-    moderate_csv = run_locust_test(users=10, spawn_rate=1, runtime='10s', host=args.host)
+    moderate_csv = run_locust_test(users=50, spawn_rate=5, runtime='30s', host=args.host)
     results.append(moderate_csv)
 
     time.sleep(5)
 
     print("\nRunning high load test...")
-    high_csv = run_locust_test(users=10, spawn_rate=1, runtime='10s', host=args.host)
+    high_csv = run_locust_test(users=100, spawn_rate=10, runtime='30s', host=args.host)
     results.append(high_csv)
 
     for stats_file, failures_file in results:
